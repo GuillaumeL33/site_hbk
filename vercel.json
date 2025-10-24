@@ -11,5 +11,6 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ]
+  ],
+  "includeFiles": ["**/*.png"]  // Force l'inclusion des PNG
 }
