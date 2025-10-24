@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NomDeTaPlateforme — Investissez intelligemment en RWA</title>
+  <title>Hubricks — Investissez intelligemment en RWA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -13,23 +13,27 @@
       --black: #000;
       --primary: #6C1CF7;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
       color: var(--black);
       background: var(--bg);
     }
+
     body {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
     }
+
     .wrap {
       min-height: 100vh;
       display: flex;
@@ -42,37 +46,47 @@
       max-width: 900px;
       width: 100%;
     }
+
     .logo {
       width: 140px;
       max-width: 35vw;
       margin-bottom: 20px;
       align-self: flex-start;
     }
+
     .logo:hover {
       transform: scale(1.05);
     }
+
     .hero {
       font-weight: 600;
-      font-size: clamp(25px, 9vw, 90px);
-      line-height: 0.9;
+      font-size: clamp(25px, 9vw, 55px);
+      line-height: 1;
       letter-spacing: -0.5px;
       color: var(--black);
       max-width: 100%;
       text-align: left;
     }
+
     .gradient-text {
       background: var(--gradient);
       background-size: 100% 1000%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      /* Animation supprimée */
     }
+
+    .bold-gradient {
+      font-weight: 800;
+      -webkit-text-stroke: 0.5px rgba(0,0,0,0.1);
+    }
+
     .subtitle {
       font-size: clamp(16px, 1.8vw, 22px);
       opacity: 0.9;
       margin-bottom: 20px;
       color: var(--black);
     }
+
     .button {
       background: var(--gradient);
       background-size: 100% 100%;
@@ -87,10 +101,12 @@
       align-items: center;
       gap: 8px;
     }
+
     .button:hover {
       opacity: 0.9;
       background: #000;
     }
+
     .trust {
       display: flex;
       align-items: center;
@@ -100,19 +116,42 @@
       opacity: 0.8;
       color: var(--black);
     }
+
     .trustpilot {
       color: #00B67A;
       font-weight: 600;
     }
+
     .footer {
       font-size: clamp(10px, 1vw, 12px);
-      text-align: center;
+      text-align: justify;
+      text-justify: inter-word;
       opacity: 0.6;
       max-width: 700px;
       line-height: 1.4;
       margin-top: 60px;
       color: var(--black);
     }
+
+    .footer-logo {
+      font-size: clamp(40px, 10vw, 1000px);
+      font-weight: 800;
+      text-align: center;
+      width: 100%;
+      margin-top: 80px;
+      line-height: 1;
+      background: var(--gradient);
+      background-size: 100% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     @media (max-width: 480px) {
       .hero {
         font-size: clamp(24px, 14vw, 40px);
@@ -126,27 +165,38 @@
     }
   </style>
 </head>
+
 <body>
   <main class="wrap">
     <img class="logo" src="/hubricks_logo_b.png" alt="Hubricks logo">
+
     <h1 class="hero">
-      The easiest app to invest intelligently in <span class="gradient-text">RWA</span>
+      The easiest app to<br>
+      invest intelligently<br>
+      in <span class="gradient-text bold-gradient">RWA</span>
     </h1>
+
     <p class="subtitle">
       Achetez, vendez et gérez vos actifs tokenisés<br>
       avec un accompagnement sur-mesure.
     </p>
+
     <a class="button" href="#cta">
       Commencer maintenant
       <span>→</span>
     </a>
+
     <div class="trust">
       <span class="trustpilot">★ Trustpilot</span>
       <span>1500+ avis | 4,7/5</span>
     </div>
+
     <p class="footer">
-      ©2025 NomDeTaPlateforme. Les informations présentées sur ce site sont fournies à titre informatif et ne constituent pas un conseil en investissement. Pour plus de détails, consultez nos <a href="#legal" style="color: var(--primary);">conditions générales</a>.
+      ©2025 HUBRICKS tokenized SAS<br><br>
+      Les informations présentées sur ce site sont fournies uniquement à titre informatif...
     </p>
+
+    <h2 class="footer-logo gradient-text">HUBRICKS</h2>
   </main>
 </body>
 </html>
