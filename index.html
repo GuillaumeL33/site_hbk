@@ -9,9 +9,15 @@
     :root {
       --gradient: linear-gradient(90deg, #6C1CF7, #F9299F, #F3522A);
       --bg: #e9eef2;
+      --text: #000;
       --white: #fff;
-      --black: #000;
       --primary: #6C1CF7;
+    }
+
+    body.dark {
+      --bg: #0f0f11;
+      --text: #f1f1f1;
+      --gradient: linear-gradient(90deg, #8B5CF6, #EC4899, #F97316);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -19,8 +25,9 @@
     html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
-      color: var(--black);
+      color: var(--text);
       background: var(--bg);
+      transition: background 0.4s, color 0.4s;
     }
 
     body {
@@ -33,21 +40,23 @@
     }
 
     .wrap {
-      flex: 1; /* occupe l'espace disponible */
+      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 24px;
       padding: 40px;
       max-width: 900px;
       width: 100%;
-      align-items: flex-start; /* aligné à gauche */
-      text-align: left; /* texte aligné à gauche */
+      align-items: flex-start;
+      text-align: left;
+      position: relative;
     }
 
     .logo {
       width: 140px;
       max-width: 35vw;
       margin-bottom: 20px;
+      transition: transform 0.2s;
     }
 
     .logo:hover { transform: scale(1.05); }
@@ -57,8 +66,8 @@
       font-size: clamp(25px, 9vw, 55px);
       line-height: 1.1;
       letter-spacing: -0.5px;
-      color: var(--black);
-      text-align: left; /* titre aligné à gauche */
+      color: var(--text);
+      text-align: left;
     }
 
     .gradient-text {
@@ -77,13 +86,17 @@
       font-size: clamp(16px, 1.8vw, 22px);
       opacity: 0.9;
       margin-bottom: 20px;
-      color: var(--black);
+      color: var(--text);
       text-align: left;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
     }
 
     .button {
       background: var(--gradient);
-      background-size: 100% 100%;
       color: var(--white);
       padding: 12px 24px;
       border-radius: 8px;
@@ -94,9 +107,18 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: transform 0.2s, opacity 0.3s;
     }
 
-    .button:hover { opacity: 0.9; background: #000; }
+    .button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .button-black {
+      background: var(--text);
+      color: var(--white);
+    }
 
     .trust {
       display: flex;
@@ -105,20 +127,9 @@
       margin-top: 20px;
       font-size: 14px;
       opacity: 0.8;
-      color: var(--black);
+      color: var(--text);
       text-align: left;
     }
-    
-    .black-button {
-  background: #000;       /* noir */
-  color: #fff;            /* texte blanc */
-}
-
-.black-button:hover {
-  opacity: 0.9;
-  background: #333;       /* effet hover plus clair */
-}
-
 
     .trustpilot { color: #00B67A; font-weight: 600; }
 
@@ -132,7 +143,7 @@
       line-height: 1.8;
       margin-top: 60px;
       padding: 20px;
-      color: var(--black);
+      color: var(--text);
     }
 
     .footer-logo {
@@ -147,18 +158,42 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* Bouton thème */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid var(--text);
+      border-radius: 50%;
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
     @media (max-width: 480px) {
       .hero { font-size: clamp(24px, 14vw, 40px); }
       .subtitle { font-size: 14px; }
       .wrap { padding: 20px; }
+      .buttons { flex-direction: column; width: 100%; }
     }
   </style>
 </head>
 
 <body>
   <main class="wrap">
-    <!-- Logo en haut -->
-    <img class="logo" src="/hubricks_logo_b.png" alt="Hubricks logo">
+    <!-- Bouton Thème -->
+    <button id="theme-toggle" class="theme-toggle">🌞</button>
+
+    <!-- Logo -->
+    <img id="logo" class="logo" src="/hubricks_logo_b.png" alt="Hubricks logo">
 
     <!-- Titre -->
     <h1 class="hero">
@@ -173,17 +208,17 @@
       avec un accompagnement sur-mesure.
     </p>
 
-    <!-- Bouton -->
-    <div style="display: flex; gap: 16px; margin-top: 20px;">
-  <a class="button" href="#cta">
-    Commencer maintenant
-    <span>→</span>
-  </a>
-  <a class="button black-button" href="/WP.html">
-    White Paper
-    <span>→</span>
-  </a>
-</div>
+    <!-- Boutons -->
+    <div class="buttons">
+      <a class="button" href="#cta">
+        Commencer maintenant
+        <span>→</span>
+      </a>
+
+      <a class="button button-black" href="wp.html">
+        WhitePaper
+      </a>
+    </div>
 
     <!-- Trust -->
     <div class="trust">
@@ -192,10 +227,37 @@
     </div>
   </main>
 
-  <!-- Footer texte justifié -->
+  <!-- Footer -->
   <p class="footer">
     ©2025 HUBRICKS tokenized SAS. Les informations présentées sur ce site sont fournies uniquement à titre informatif et ne constituent en aucun cas une offre d’investissement dans un token, un fonds ou toute autre opportunité. Les performances présentées sont nettes de tous les frais, coûts et dépenses associés aux tokens. En cas de rachat ou de revente de tokens via Hubricks ou sur un marché secondaire, d’autres frais de traitement peuvent s’appliquer et ne sont pas inclus dans les rendements affichés. Les performances passées ne préjugent pas des performances futures. Les rendements sont calculés sur la base des revenus distribués (par exemple les loyers) et de l’appréciation de la valeur du bien sous-jacent. L’appréciation est déterminée par la différence entre le prix d’acquisition et les réévaluations annuelles du bien. Les rendements individuels peuvent varier selon la date d’investissement et de rachat de chaque investisseur. Ce site est exploité par HUBRICKS SAS, qui n’est ni prestataire de services d’investissement, ni conseiller en investissement financier agréé. HUBRICKS SAS ne fournit aucun conseil en investissement, recommandation ou analyse concernant des instruments financiers. Rien sur ce site ne doit être interprété comme une offre de vente, une sollicitation d’offre d’achat ou une recommandation d’un instrument financier par HUBRICKS SAS ou un tiers. Il vous appartient de déterminer si un investissement, une stratégie d’investissement, un instrument financier ou une transaction liée vous convient, en fonction de vos objectifs, de votre situation financière et de votre tolérance au risque. Nous vous recommandons de consulter des professionnels agréés (juridiques, fiscaux, financiers) pour tout conseil relatif à vos investissements. Tous les instruments financiers présentés sur ce site sont proposés par leur émetteur respectif, qui est seul responsable des informations les concernant. HUBRICKS SAS ne garantit pas la performance, le résultat ou le remboursement du capital pour toute opportunité d’investissement présentée sur ce site.
   </p>
 
+  <!-- Script Thème -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const logo = document.getElementById('logo');
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add('dark');
+        toggle.textContent = '🌙';
+        logo.src = '/hubricks_logo_w.png';
+      } else {
+        body.classList.remove('dark');
+        toggle.textContent = '🌞';
+        logo.src = '/hubricks_logo_b.png';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const newTheme = body.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+  </script>
 </body>
 </html>
