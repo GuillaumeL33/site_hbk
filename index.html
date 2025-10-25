@@ -31,7 +31,7 @@
       font-family: 'Montserrat', sans-serif;
       color: var(--text);
       background: var(--bg);
-      transition: background 0.4s, color 0.4s;
+      transition: background 0.4s ease, color 0.4s ease;
     }
 
     body {
@@ -54,15 +54,18 @@
       position: relative;
     }
 
+    /* --- LOGO --- */
     .logo {
-      width: 140px;
-      max-width: 35vw;
+      width: 160px;
+      height: auto;
+      object-fit: contain;
       margin-bottom: 20px;
-      transition: transform 0.2s, opacity 0.4s;
+      transition: opacity 0.4s ease;
     }
 
     .logo:hover { transform: scale(1.05); }
 
+    /* --- TITRE --- */
     .hero {
       font-weight: 600;
       font-size: clamp(25px, 9vw, 55px);
@@ -89,6 +92,7 @@
       color: var(--text);
     }
 
+    /* --- BOUTONS --- */
     .buttons {
       display: flex;
       gap: 16px;
@@ -126,6 +130,7 @@
       opacity: 0.85;
     }
 
+    /* --- TRUST --- */
     .trust {
       display: flex;
       align-items: center;
@@ -138,6 +143,7 @@
 
     .trustpilot { color: #00B67A; font-weight: 600; }
 
+    /* --- FOOTER --- */
     .footer {
       font-size: clamp(4px, 1.2vw, 6px);
       text-align: justify;
@@ -150,7 +156,7 @@
       color: var(--text);
     }
 
-    /* Bouton thème (flat design) */
+    /* --- BOUTON THEME (flat design) --- */
     .theme-toggle {
       position: absolute;
       top: 20px;
@@ -159,8 +165,8 @@
       border: none;
       cursor: pointer;
       transition: transform 0.3s ease;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
     }
 
     .theme-toggle img {
@@ -186,7 +192,7 @@
   <main class="wrap">
     <!-- Bouton Thème -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-      <img id="theme-icon" src="light_mode.png" alt="Changer de thème">
+      <img id="theme-icon" src="dark_mode.png" alt="Changer de thème">
     </button>
 
     <!-- Logo -->
@@ -233,12 +239,12 @@
     function setTheme(theme) {
       if (theme === 'dark') {
         body.classList.add('dark');
-        logo.src = 'hubricks_logo_w.png';
-        themeIcon.src = 'dark_mode.png';
+        logo.src = 'hubricks_logo_w.png'; // logo blanc pour fond sombre
+        themeIcon.src = 'light_mode.png'; // icône soleil
       } else {
         body.classList.remove('dark');
-        logo.src = 'hubricks_logo_b.png';
-        themeIcon.src = 'light_mode.png';
+        logo.src = 'hubricks_logo_b.png'; // logo noir pour fond clair
+        themeIcon.src = 'dark_mode.png'; // icône lune
       }
       localStorage.setItem('theme', theme);
     }
