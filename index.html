@@ -108,6 +108,17 @@
       color: var(--black);
       text-align: left;
     }
+    
+    .black-button {
+  background: #000;       /* noir */
+  color: #fff;            /* texte blanc */
+}
+
+.black-button:hover {
+  opacity: 0.9;
+  background: #333;       /* effet hover plus clair */
+}
+
 
     .trustpilot { color: #00B67A; font-weight: 600; }
 
@@ -163,10 +174,16 @@
     </p>
 
     <!-- Bouton -->
-    <a class="button" href="#cta">
-      Commencer maintenant
-      <span>→</span>
-    </a>
+    <div style="display: flex; gap: 16px; margin-top: 20px;">
+  <a class="button" href="#cta">
+    Commencer maintenant
+    <span>→</span>
+  </a>
+  <a class="button black-button" href="/wp.html">
+    White Paper
+    <span>→</span>
+  </a>
+</div>
 
     <!-- Trust -->
     <div class="trust">

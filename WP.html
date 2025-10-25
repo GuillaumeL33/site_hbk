@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hubricks — White Paper FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gradient: linear-gradient(90deg, #6C1CF7, #F9299F, #F3522A);
+      --bg: #f8f9fb;
+      --white: #fff;
+      --black: #000;
+      --primary: #6C1CF7;
+      --faq-bg: #ffffff;
+      --faq-border: #e0e0e0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--black);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrap {
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 30px;
+    }
+
+    h1.hero {
+      font-size: clamp(28px, 8vw, 50px);
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      background: var(--faq-bg);
+      border: 1px solid var(--faq-border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 16px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover {
+      background: #f0f0f0;
+    }
+
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 20px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 16px 20px;
+      max-height: 2000px; /* suffisant pour le contenu long */
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #555;
+      text-align: justify;
+    }
+    
+   .button {
+  background: var(--gradient);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* ombre douce */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.button:hover {
+  transform: translateY(-2px); /* effet “lifter” */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* ombre plus prononcée */
+  opacity: 0.95;
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="/hubricks_logo_b.png" alt="Hubricks logo">
+    <h1 class="hero">Hubricks Tokenized SAS – White Paper</h1>
+
+    <!-- FAQ style -->
+    <div class="faq-item">
+      <div class="faq-question">1. Introduction</div>
+      <div class="faq-answer">
+        <p>Hubricks Tokenized SAS est une plateforme innovante d’investissement dans les Real World Assets (RWA)...</p>
+        <ul>
+          <li>Rendre l’investissement dans les RWA accessible à tous.</li>
+          <li>Offrir des instruments financiers tokenisés fiables et transparents.</li>
+          <li>Créer un écosystème décentralisé qui récompense la participation active.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">2. Team & Mission</div>
+      <div class="faq-answer">
+        <p><strong>Notre équipe :</strong> Experts finance, blockchain, développement digital...</p>
+        <ul>
+          <li>CEO : Visionnaire en fintech et blockchain</li>
+          <li>CTO : Expert en smart contracts</li>
+          <li>Head of Investments : Spécialiste RWA</li>
+          <li>Head of Community & Marketing</li>
+        </ul>
+        <p><strong>Mission :</strong> Démocratiser l’accès aux RWA via la blockchain.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">3. Game Ecosystem</div>
+      <div class="faq-answer">
+        <ul>
+          <li>Investissement tokenisé</li>
+          <li>Staking et rewards</li>
+          <li>Marketplace sécurisé</li>
+          <li>Partenariats stratégiques</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">4. Core Philosophy</div>
+      <div class="faq-answer">
+        <ul>
+          <li>Transparence</li>
+          <li>Accessibilité</li>
+          <li>Décentralisation</li>
+          <li>Sécurité</li>
+          <li>Vision long terme</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">5. Core Dimensions</div>
+      <div class="faq-answer">
+        <p><strong>Technologie :</strong> Smart contracts sécurisés, intégration blockchain majeure.</p>
+        <p><strong>Économie :</strong> Modèle basé sur frais et incitations.</p>
+        <p><strong>Communauté :</strong> Programmes éducatifs et gouvernance tokenisée.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">6. Tokenomics</div>
+      <div class="faq-answer">
+        <p><strong>Token HBRK :</strong> Utilisé pour investir, staking et gouvernance.</p>
+        <p><strong>Distribution :</strong> 40% utilisateurs, 25% équipe, 20% investisseurs, 15% marketing.</p>
+        <p><strong>Utilisation :</strong> 50% tech, 30% acquisition RWA, 20% marketing.</p>
+        <p><strong>Mécanismes :</strong> Staking rewards et programmes communautaires.</p>
+      </div>
+    </div>
+
+    <a class="button" href="index.html">← Retour à l'accueil</a>
+
+    <p class="footer">
+      ©2025 HUBRICKS tokenized SAS. Informations fournies uniquement à titre informatif et ne constituent pas un conseil en investissement.
+    </p>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
