@@ -21,31 +21,24 @@
       --button-black-bg:#fff;
       --button-black-text:#000;
     }
-
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%;font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);transition:background .4s ease,color .4s ease}
     body{display:flex;flex-direction:column;min-height:100vh;align-items:center}
     .wrap{flex:1;display:flex;flex-direction:column;gap:24px;padding:40px;max-width:900px;width:100%;align-items:flex-start;text-align:left;position:relative}
-
-    /* === LOGO : dimensions bloquées (ratio 500x300 -> 1.6667) === */
-    /* - widthDisplayed = 220px (modifiable) ; heightComputed = widthDisplayed / ratio */
+    /* Logo: dimensions fixes et transition fluide */
     .logo{
-      /* choose the displayed width here (responsive subject to max-width) */
-      width: 220px;                 /* <-- change this value if you want a different displayed size */
-      height: calc(220px / 1.6666667); /* keeps 500:300 ratio */
-      max-width: 100%;              /* won't exceed container on small screens */
+      width: 220px;
+      height: calc(220px / 1.6666667);
+      max-width: 100%;
       object-fit: contain;
       display:block;
       opacity:1;
       transition: opacity .35s ease;
-      /* remove transform scale on hover to prevent size jumps */
     }
-
-    /* If you need a slightly smaller size on narrow screens */
-    @media (max-width: 480px){
-      .logo{ width: 150px; height: calc(150px / 1.6666667) }
+    /* Pré-chargement des logos pour éviter le saut */
+    .logo-preload{
+      display: none;
     }
-
     .hero{font-weight:600;font-size:clamp(25px,9vw,55px);line-height:1.1;letter-spacing:-0.5px;color:var(--text)}
     .gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .bold-gradient{font-weight:800}
@@ -59,77 +52,79 @@
     .trust{display:flex;align-items:center;gap:16px;margin-top:20px;font-size:14px;opacity:.8;color:var(--text)}
     .footer{font-size:clamp(4px,1.2vw,6px);text-align:justify;opacity:.8;max-width:900px;width:100%;line-height:1.8;margin-top:60px;padding:20px;color:var(--text)}
     .footer-logo{font-size:clamp(80px,15vw,200px);font-weight:900;text-align:center;width:100%;margin-top:80px;line-height:1;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
     @media (max-width:480px){
       .hero{font-size:clamp(24px,14vw,40px)}
       .subtitle{font-size:14px}
       .wrap{padding:20px}
       .buttons{flex-direction:column;width:100%}
       .footer{padding:12px}
+      .logo{width:150px;height:calc(150px / 1.6666667)}
     }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <!-- theme toggle: use your icons from the project root (light_mode.png / dark_mode.png) -->
+    <!-- Pré-chargement des logos -->
+    <img class="logo-preload" src="hubricks_logo_b.png" alt="Logo Hubricks noir">
+    <img class="logo-preload" src="hubricks_logo_w.png" alt="Logo Hubricks blanc">
+    <!-- Bouton de thème -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
       <img id="theme-icon" src="light_mode.png" alt="Changer de thème">
     </button>
-
-    <!-- Logo: include width/height attributes matching the original file (helps reserve space and prevent layout jump) -->
+    <!-- Logo principal -->
     <img id="logo" class="logo" src="hubricks_logo_b.png" alt="Hubricks logo" width="500" height="300">
-
     <h1 class="hero">
       The easiest app to<br>
       invest intelligently<br>
       in <span class="gradient-text bold-gradient">RWA</span>
     </h1>
-
     <p class="subtitle">
       Achetez, vendez et gérez vos actifs tokenisés<br>
       avec un accompagnement sur-mesure.
     </p>
-
     <div class="buttons">
       <a class="button" href="#cta">Commencer maintenant →</a>
       <a class="button button-black" href="wp.html">WhitePaper</a>
     </div>
-
     <div class="trust">
       <span class="trustpilot">★ Trustpilot</span>
       <span>1500+ avis | 4,7/5</span>
     </div>
   </main>
-
   <p class="footer">
     ©2025 HUBRICKS tokenized SAS. Les informations présentées sur ce site...
   </p>
-
   <h2 class="footer-logo">Hubricks</h2>
-
   <script>
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
     const logo = document.getElementById('logo');
     const themeIcon = document.getElementById('theme-icon');
-
     function setTheme(theme){
       if(theme === 'dark'){
         body.classList.add('dark');
-        logo.src = 'hubricks_logo_w.png';   // logo blanc pour fond sombre (veille à avoir ce fichier)
-        themeIcon.src = 'dark_mode.png';    // icône qui représente le mode sombre (ex: moon)
+        // Transition fluide pour le logo
+        logo.style.opacity = 0;
+        setTimeout(() => {
+          logo.src = 'hubricks_logo_w.png';
+          logo.style.opacity = 1;
+        }, 350);
+        themeIcon.src = 'dark_mode.png';
       } else {
         body.classList.remove('dark');
-        logo.src = 'hubricks_logo_b.png';   // logo noir pour fond clair
-        themeIcon.src = 'light_mode.png';   // icône qui représente le mode clair (ex: sun)
+        // Transition fluide pour le logo
+        logo.style.opacity = 0;
+        setTimeout(() => {
+          logo.src = 'hubricks_logo_b.png';
+          logo.style.opacity = 1;
+        }, 350);
+        themeIcon.src = 'light_mode.png';
       }
       localStorage.setItem('theme', theme);
     }
-
-    // initialisation
+    // Initialisation
     const saved = localStorage.getItem('theme') || 'light';
     setTheme(saved);
-
     toggle.addEventListener('click', () => {
       setTheme(body.classList.contains('dark') ? 'light' : 'dark');
     });
