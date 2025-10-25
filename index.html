@@ -12,12 +12,16 @@
       --text: #000;
       --white: #fff;
       --primary: #6C1CF7;
+      --button-black-bg: #000;
+      --button-black-text: #fff;
     }
 
     body.dark {
       --bg: #0f0f11;
       --text: #f1f1f1;
       --gradient: linear-gradient(90deg, #8B5CF6, #EC4899, #F97316);
+      --button-black-bg: #fff;
+      --button-black-text: #000;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,8 +38,6 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      margin: 0;
-      padding: 0;
       align-items: center;
     }
 
@@ -56,7 +58,7 @@
       width: 140px;
       max-width: 35vw;
       margin-bottom: 20px;
-      transition: transform 0.2s;
+      transition: transform 0.2s, opacity 0.4s;
     }
 
     .logo:hover { transform: scale(1.05); }
@@ -67,12 +69,10 @@
       line-height: 1.1;
       letter-spacing: -0.5px;
       color: var(--text);
-      text-align: left;
     }
 
     .gradient-text {
       background: var(--gradient);
-      background-size: 100% 1000%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -87,12 +87,12 @@
       opacity: 0.9;
       margin-bottom: 20px;
       color: var(--text);
-      text-align: left;
     }
 
     .buttons {
       display: flex;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .button {
@@ -107,7 +107,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: transform 0.2s, opacity 0.3s;
+      transition: transform 0.2s, opacity 0.3s, background 0.3s, color 0.3s;
     }
 
     .button:hover {
@@ -115,9 +115,15 @@
       opacity: 0.9;
     }
 
+    /* Bouton WhitePaper dynamique */
     .button-black {
-      background: var(--text);
-      color: var(--white);
+      background: var(--button-black-bg);
+      color: var(--button-black-text);
+      border: 1px solid var(--button-black-bg);
+    }
+
+    .button-black:hover {
+      opacity: 0.85;
     }
 
     .trust {
@@ -128,7 +134,6 @@
       font-size: 14px;
       opacity: 0.8;
       color: var(--text);
-      text-align: left;
     }
 
     .trustpilot { color: #00B67A; font-weight: 600; }
@@ -136,7 +141,6 @@
     .footer {
       font-size: clamp(4px, 1.2vw, 6px);
       text-align: justify;
-      text-justify: inter-word;
       opacity: 0.8;
       max-width: 900px;
       width: 100%;
@@ -146,36 +150,27 @@
       color: var(--text);
     }
 
-    .footer-logo {
-      font-size: clamp(80px, 15vw, 200px);
-      font-weight: 900;
-      text-align: center;
-      width: 100%;
-      margin-top: 80px;
-      line-height: 1;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Bouton thème */
+    /* Bouton thème (flat design) */
     .theme-toggle {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: none;
-      border: 2px solid var(--text);
-      border-radius: 50%;
-      color: var(--text);
-      width: 40px;
-      height: 40px;
+      background: transparent;
+      border: none;
       cursor: pointer;
-      font-size: 18px;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
+      width: 44px;
+      height: 44px;
     }
 
-    .theme-toggle:hover {
-      transform: scale(1.1);
+    .theme-toggle img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .theme-toggle:hover img {
+      transform: rotate(15deg) scale(1.1);
     }
 
     @media (max-width: 480px) {
@@ -190,10 +185,12 @@
 <body>
   <main class="wrap">
     <!-- Bouton Thème -->
-    <button id="theme-toggle" class="theme-toggle">🌞</button>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+      <img id="theme-icon" src="light_mode.png" alt="Changer de thème">
+    </button>
 
     <!-- Logo -->
-    <img id="logo" class="logo" src="/hubricks_logo_b.png" alt="Hubricks logo">
+    <img id="logo" class="logo" src="hubricks_logo_b.png" alt="Hubricks logo">
 
     <!-- Titre -->
     <h1 class="hero">
@@ -210,14 +207,8 @@
 
     <!-- Boutons -->
     <div class="buttons">
-      <a class="button" href="#cta">
-        Commencer maintenant
-        <span>→</span>
-      </a>
-
-      <a class="button button-black" href="wp.html">
-        WhitePaper
-      </a>
+      <a class="button" href="#cta">Commencer maintenant →</a>
+      <a class="button button-black" href="wp.html">WhitePaper</a>
     </div>
 
     <!-- Trust -->
@@ -229,7 +220,7 @@
 
   <!-- Footer -->
   <p class="footer">
-    ©2025 HUBRICKS tokenized SAS. Les informations présentées sur ce site sont fournies uniquement à titre informatif et ne constituent en aucun cas une offre d’investissement dans un token, un fonds ou toute autre opportunité. Les performances présentées sont nettes de tous les frais, coûts et dépenses associés aux tokens. En cas de rachat ou de revente de tokens via Hubricks ou sur un marché secondaire, d’autres frais de traitement peuvent s’appliquer et ne sont pas inclus dans les rendements affichés. Les performances passées ne préjugent pas des performances futures. Les rendements sont calculés sur la base des revenus distribués (par exemple les loyers) et de l’appréciation de la valeur du bien sous-jacent. L’appréciation est déterminée par la différence entre le prix d’acquisition et les réévaluations annuelles du bien. Les rendements individuels peuvent varier selon la date d’investissement et de rachat de chaque investisseur. Ce site est exploité par HUBRICKS SAS, qui n’est ni prestataire de services d’investissement, ni conseiller en investissement financier agréé. HUBRICKS SAS ne fournit aucun conseil en investissement, recommandation ou analyse concernant des instruments financiers. Rien sur ce site ne doit être interprété comme une offre de vente, une sollicitation d’offre d’achat ou une recommandation d’un instrument financier par HUBRICKS SAS ou un tiers. Il vous appartient de déterminer si un investissement, une stratégie d’investissement, un instrument financier ou une transaction liée vous convient, en fonction de vos objectifs, de votre situation financière et de votre tolérance au risque. Nous vous recommandons de consulter des professionnels agréés (juridiques, fiscaux, financiers) pour tout conseil relatif à vos investissements. Tous les instruments financiers présentés sur ce site sont proposés par leur émetteur respectif, qui est seul responsable des informations les concernant. HUBRICKS SAS ne garantit pas la performance, le résultat ou le remboursement du capital pour toute opportunité d’investissement présentée sur ce site.
+    ©2025 HUBRICKS tokenized SAS. Les informations présentées sur ce site sont fournies uniquement à titre informatif (...)
   </p>
 
   <!-- Script Thème -->
@@ -237,16 +228,17 @@
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
     const logo = document.getElementById('logo');
+    const themeIcon = document.getElementById('theme-icon');
 
     function setTheme(theme) {
       if (theme === 'dark') {
         body.classList.add('dark');
-        toggle.textContent = '🌙';
-        logo.src = '/hubricks_logo_w.png';
+        logo.src = 'hubricks_logo_w.png';
+        themeIcon.src = 'dark_mode.png';
       } else {
         body.classList.remove('dark');
-        toggle.textContent = '🌞';
-        logo.src = '/hubricks_logo_b.png';
+        logo.src = 'hubricks_logo_b.png';
+        themeIcon.src = 'light_mode.png';
       }
       localStorage.setItem('theme', theme);
     }
