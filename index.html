@@ -13,6 +13,7 @@
       --bg: #e9eef2;
       --text: #25165d;
       --white: #fff;
+      --violetC: #e9e5fc;
       --button-black-bg: #e9e5fc;
       --button-black-text: #780ffc;
     }
@@ -20,8 +21,8 @@
       --bg:#0f0f11;
       --text:#f1f1f1;
       --gradient: linear-gradient(90deg, #780ffc, #780ffc, #780ffc);
-      --button-black-bg:#fff;
-      --button-black-text:#000;
+      --button-black-bg:#e9e5fc;
+      --button-black-text:#25165d;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -104,25 +105,27 @@
       opacity:.95;
     }
 
-    /* WhitePaper button - inversions au survol selon thème */
-    .button-black{
-      background:var(--button-black-bg);
-      color:var(--button-black-text);
-    }
+/* WhitePaper button */
+.button-black{
+  background: var(--button-black-bg);
+  color: var(--button-black-text);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
 
-    /* Mode clair → hover blanc */
-    body:not(.dark) .button-black:hover {
-      background: #fff;
-      color: #000;
-      border-color: #000;
-    }
+.button-black:hover{
+  transform: translateY(-2px);
+}
 
-    /* Mode sombre → hover noir */
-    body.dark .button-black:hover {
-      background: #000;
-      color: #fff;
-      border-color: #fff;
-    }
+/* Mode sombre → texte violet au hover */
+body.dark .button-black:hover {
+  color: #780ffc;
+}
+
+/* Mode clair → pas de changement au hover */
+body:not(.dark) .button-black:hover {
+  color: var(--button-black-text);
+}
+
 
     /* Theme toggle */
     .theme-toggle{
@@ -200,7 +203,7 @@
     </button>
 
     <!-- Logo principal -->
-    <img id="logo" class="logo" src="hubricks_logo_v.png" alt="Hubricks logo" width="500" height="300">
+    <img id="logo" class="logo" src="hubricks_logo_b.png" alt="Hubricks logo" width="500" height="300">
 
     <h1 class="hero">
       The easiest app to<br>
