@@ -92,42 +92,10 @@
     </div>
   </main>
   <p class="footer">
-    ©2025 HUBRICKS tokenized SAS. Les informations présentées sur ce site...
+2025 HUBRICKS tokenized SAS
+Les informations présentées sur ce site sont fournies uniquement à titre informatif et ne constituent en aucun cas une offre d’investissement dans un token, un fonds ou toute autre opportunité. Les performances présentées sont nettes de tous les frais, coûts et dépenses associés aux tokens. En cas de rachat ou de revente de tokens via Hubricks ou sur un marché secondaire, d’autres frais de traitement peuvent s’appliquer et ne sont pas inclus dans les rendements affichés. Les performances passées ne préjugent pas des performances futures. Les rendements sont calculés sur la base des revenus distribués (par exemple les loyers) et de l’appréciation de la valeur du bien sous-jacent. L’appréciation est déterminée par la différence entre le prix d’acquisition et les réévaluations annuelles du bien. Les rendements individuels peuvent varier selon la date d’investissement et de rachat de chaque investisseur.
+Ce site est exploité par HUBRICKS SAS, qui n’est ni prestataire de services d’investissement, ni conseiller en investissement financier agréé. HUBRICKS SAS ne fournit aucun conseil en investissement, recommandation ou analyse concernant des instruments financiers. Rien sur ce site ne doit être interprété comme une offre de vente, une sollicitation d’offre d’achat ou une recommandation d’un instrument financier par HUBRICKS SAS ou un tiers. Il vous appartient de déterminer si un investissement, une stratégie d’investissement, un instrument financier ou une transaction liée vous convient, en fonction de vos objectifs, de votre situation financière et de votre tolérance au risque. Nous vous recommandons de consulter des professionnels agréés (juridiques, fiscaux, financiers) pour tout conseil relatif à vos investissements. Tous les instruments financiers présentés sur ce site sont proposés par leur émetteur respectif, qui est seul responsable des informations les concernant. HUBRICKS SAS ne garantit pas la performance, le résultat ou le remboursement du capital pour toute opportunité d’investissement présentée sur ce site.
+Nous améliorons nos produits et notre publicité en utilisant, entre autres, des outils d’analyse comme Microsoft Clarity pour comprendre comment vous utilisez notre site. En utilisant notre site, vous acceptez que nous et nos prestataires puissions collecter et utiliser ces données. Notre Politique de confidentialité contient plus de détails. En accédant à ce site et à ses pages, vous acceptez d’être lié par nos Conditions générales d’utilisation et notre Politique de confidentialité. Veuillez consulter également notre avertissement général et notre déclaration d’accessibilité.
   </p>
-  <h2 class="footer-logo">Hubricks</h2>
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const logo = document.getElementById('logo');
-    const themeIcon = document.getElementById('theme-icon');
-    function setTheme(theme){
-      if(theme === 'dark'){
-        body.classList.add('dark');
-        // Transition fluide pour le logo
-        logo.style.opacity = 0;
-        setTimeout(() => {
-          logo.src = 'hubricks_logo_w.png';
-          logo.style.opacity = 1;
-        }, 350);
-        themeIcon.src = 'dark_mode.png';
-      } else {
-        body.classList.remove('dark');
-        // Transition fluide pour le logo
-        logo.style.opacity = 0;
-        setTimeout(() => {
-          logo.src = 'hubricks_logo_b.png';
-          logo.style.opacity = 1;
-        }, 350);
-        themeIcon.src = 'light_mode.png';
-      }
-      localStorage.setItem('theme', theme);
-    }
-    // Initialisation
-    const saved = localStorage.getItem('theme') || 'light';
-    setTheme(saved);
-    toggle.addEventListener('click', () => {
-      setTheme(body.classList.contains('dark') ? 'light' : 'dark');
-    });
-  </script>
 </body>
 </html>
