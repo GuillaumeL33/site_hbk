@@ -9,17 +9,17 @@
 
   <style>
     :root{
-      --gradient: linear-gradient(90deg, #780ffc, #780ffc, #780ffc);
+      --gradient: linear-gradient(90deg, #6C1CF7, #F9299F, #F3522A);
       --bg: #e9eef2;
-      --text: #25165d;
+      --text: #000;
       --white: #fff;
-      --button-black-bg: #e9e5fc;
-      --button-black-text: #780ffc;
+      --button-black-bg: #000;
+      --button-black-text: #fff;
     }
     body.dark{
       --bg:#0f0f11;
       --text:#f1f1f1;
-      --gradient: linear-gradient(90deg, #780ffc, #780ffc, #780ffc);
+      --gradient: linear-gradient(90deg, #6C1CF7, #F9299F, #F3522A);
       --button-black-bg:#fff;
       --button-black-text:#000;
     }
@@ -98,6 +98,7 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
+      transition:transform .18s,opacity .2s,background .3s,color .3s,border .3s;
     }
     .button:hover{
       transform:translateY(-2px);
@@ -108,6 +109,7 @@
     .button-black{
       background:var(--button-black-bg);
       color:var(--button-black-text);
+      border:1px solid var(--button-black-bg);
     }
 
     /* Mode clair → hover blanc */
@@ -200,7 +202,7 @@
     </button>
 
     <!-- Logo principal -->
-    <img id="logo" class="logo" src="hubricks_logo_v.png" alt="Hubricks logo" width="500" height="300">
+    <img id="logo" class="logo" src="hubricks_logo_b.png" alt="Hubricks logo" width="500" height="300">
 
     <h1 class="hero">
       The easiest app to<br>

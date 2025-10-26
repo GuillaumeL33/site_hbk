@@ -41,12 +41,17 @@
       margin-bottom: 30px;
     }
 
-    h1.hero {
-      font-size: clamp(28px, 8vw, 50px);
-      font-weight: 700;
-      color: var(--black);
-      margin-bottom: 20px;
-    }
+    /* Gradient text pour le H1 */
+h1.hero {
+  font-size: clamp(28px, 8vw, 50px);
+  font-weight: 700;
+  background: linear-gradient(90deg, #6C1CF7, #F9299F, #F3522A);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 20px;
+}
 
     .faq-item {
       background: var(--faq-bg);
@@ -93,7 +98,7 @@
 
     .faq-item.active .faq-answer {
       padding: 16px 20px;
-      max-height: 5000px; /* suffisant pour contenu très long */
+      max-height: 5000px;
     }
 
     .footer {
@@ -102,34 +107,35 @@
       color: #555;
       text-align: justify;
     }
-    
-   .button {
-      background: var(--gradient);
-      color: var(--white);
-      padding: 14px 28px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-    }
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-      opacity: 0.95;
-    }
+
+.button {
+  background: #000000; /* gradient correct */
+  color: #fff; /* texte en blanc */
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  opacity: 0.95;
+}
 
   </style>
 </head>
 <body>
   <div class="wrap">
     <img class="logo" src="/hubricks_logo_b.png" alt="Hubricks logo">
-    <h1 class="hero">Hubricks Tokenized SAS – White Paper</h1>
+    <h1 class="hero">White Paper</h1>
 
     <!-- 1. Introduction -->
     <div class="faq-item">
