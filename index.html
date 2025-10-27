@@ -135,11 +135,28 @@
       transition: 0.2s;
     }
 
-    input[type="email"]:focus {
-      box-shadow: 0 0 0 3px rgba(120, 15, 252, 0.2);
+    .email-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
-    button[type="submit"] {
+    input[type="email"] {
+      padding: 14px 18px;
+      font-family: inherit;
+      font-size: 16px;
+      width: 280px;
+      outline: none;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    input[type="email"]:focus {
+      box-shadow: 0 0 0 3px rgba(120, 15, 252, 0.2);
+      border-color: #780ffc;
+    }    button[type="submit"] {
       background: var(--violet);
       color: var(--white);
       border: none;
