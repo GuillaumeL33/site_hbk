@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hubricks — Investissez intelligemment en RWA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/3f83a1a56d.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pV7p+3f8kzv1u+Qx1jB7Y2aE5N7gG0ZlPZpE+3K1uI4tV4sK5Zg9E5E5+F9gE3R+V5cFZ8pGkZ7e2K0zqJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     :root {
@@ -26,7 +27,6 @@
     /* Navigation */
     header {
       display: flex;
-      height: 30px; /* Exemple : 80px */
       justify-content: space-between;
       align-items: center;
       padding: 20px 60px;
@@ -81,7 +81,7 @@
 
     .btn-outline {
       color: var(--violet);
-      background: #e9e5fc;
+      background: var(--violet-light);
     }
 
     .btn-filled {
@@ -96,7 +96,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      padding: 20px 80px;
+      padding: 60px 80px;
       gap: 60px;
     }
 
@@ -132,22 +132,6 @@
       font-size: 16px;
       width: 280px;
       outline: none;
-      transition: 0.2s;
-    }
-
-    .email-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    input[type="email"] {
-      padding: 14px 18px;
-      font-family: inherit;
-      font-size: 16px;
-      width: 280px;
-      outline: none;
       border: 1px solid #ccc;
       border-radius: 6px;
       transition: 0.2s;
@@ -155,8 +139,10 @@
 
     input[type="email"]:focus {
       box-shadow: 0 0 0 3px rgba(120, 15, 252, 0.2);
-      border-color: #780ffc;
-    }    button[type="submit"] {
+      border-color: var(--violet);
+    }
+
+    button[type="submit"] {
       background: var(--violet);
       color: var(--white);
       border: none;
@@ -266,6 +252,7 @@
       opacity: 0.9;
     }
 
+    /* Responsive */
     @media (max-width: 900px) {
       .hero {
         flex-direction: column;
@@ -352,7 +339,7 @@
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-youtube"></i></a>
       <a href="#"><i class="fab fa-tiktok"></i></a>
       <a href="#"><i class="fab fa-reddit"></i></a>
