@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hubricks — Investissez intelligemment en RWA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3f83a1a56d.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
@@ -95,7 +96,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      padding: 100px 80px;
+      padding: 80px 80px;
       gap: 60px;
     }
 
@@ -104,11 +105,12 @@
     }
 
     .hero h1 {
-      font-size: clamp(32px, 6vw, 56px);
+      font-size: clamp(28px, 4.5vw, 48px);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.25;
       margin-bottom: 20px;
       color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     .hero p {
@@ -196,16 +198,69 @@
       font-weight: 500;
     }
 
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        gap: 20px;
-      }
+    /* FOOTER */
+    footer {
+      background: #fff;
+      color: #5b4da3;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .footer-links a {
+      color: #5b4da3;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .social-icons a {
+      color: #5b4da3;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: var(--violet);
+    }
+
+    footer p {
+      max-width: 900px;
+      margin: 10px auto;
+      color: #5b4da3;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 900px) {
       .hero {
         flex-direction: column;
         text-align: center;
         padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+        line-height: 1.3;
       }
 
       .hero-text {
@@ -214,6 +269,13 @@
 
       .email-form {
         justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 28px;
+        line-height: 1.35;
       }
     }
   </style>
@@ -255,10 +317,38 @@
 
   <div class="bottom-strip">
     <span>🇫🇷 Conçu pour la France</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/SEPA_Logo.svg" alt="SEPA" height="28">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_Pay_logo.svg" alt="Apple Pay" height="28">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Google_Pay_Logo.svg" alt="Google Pay" height="28">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/SEPA_Logo.svg" alt="SEPA">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_Pay_logo.svg" alt="Apple Pay">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Google_Pay_Logo.svg" alt="Google Pay">
     <span>💳 Achat instantané par carte bancaire</span>
   </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Déclaration de confidentialité</a>
+      <a href="#">Conditions de service</a>
+      <a href="#">Paramètres des cookies</a>
+      <a href="#">Confidentialité recrutement</a>
+      <a href="#">Informations</a>
+      <a href="#">Règles du marché</a>
+      <a href="#">Centre de conformité</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-reddit"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-discord"></i></a>
+    </div>
+
+    <p>© 2025 Hubricks, Inc.</p>
+    <p>Hubricks fournit des services d’investissement en actifs réels tokenisés en conformité avec la réglementation française et européenne. Nos services sont opérés par Hubricks Europe SAS, société enregistrée en France.</p>
+    <p>Ces informations sont fournies à titre indicatif et ne constituent pas des conseils financiers, juridiques ou fiscaux. Les investissements comportent des risques, y compris la perte partielle ou totale du capital investi.</p>
+  </footer>
 </body>
 </html>
