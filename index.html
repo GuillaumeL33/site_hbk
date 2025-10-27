@@ -1,250 +1,264 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hubricks — Investissez intelligemment en RWA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --gradient: linear-gradient(90deg, #780ffc, #780ffc, #780ffc);
-      --bg: #e9eef2;
+    :root {
+      --violet: #780ffc;
+      --violet-light: #e9e5fc;
       --text: #25165d;
+      --bg: #f8f9fc;
       --white: #fff;
-      --violetC: #e9e5fc;
-      --button-black-bg: #e9e5fc;
-      --button-black-text: #780ffc;
-    }
-    body.dark{
-      --bg:#0f0f11;
-      --text:#f1f1f1;
-      --gradient: linear-gradient(90deg, #780ffc, #780ffc, #780ffc);
-      --button-black-bg:#e9e5fc;
-      --button-black-text:#25165d;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{
-      height:100%;
-      font-family:'Montserrat',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      transition:background .4s ease,color .4s ease;
-    }
-    body{
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-      align-items:center;
-    }
-    .wrap{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      gap:24px;
-      padding:40px;
-      max-width:900px;
-      width:100%;
-      align-items:flex-start;
-      text-align:left;
-      position:relative;
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    /* Logo */
-    .logo{
-      width: 130px;
-      height: calc(130px / 1.6666667);
-      max-width: 100%;
-      object-fit: contain;
-      display:block;
-      opacity:1;
-      transition: opacity .35s ease;
+    /* Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .logo {
+      height: 32px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--violet);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--violet);
+      color: var(--violet);
+      background: transparent;
+    }
+
+    .btn-filled {
+      background: var(--violet);
+      color: var(--white);
+      border: none;
     }
 
     /* Hero section */
-    .hero{
-      font-weight:600;
-      font-size:clamp(25px,9vw,55px);
-      line-height:1.1;
-      letter-spacing:-0.5px;
-      color:var(--text);
-    }
-    .gradient-text{
-      background:var(--gradient);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .bold-gradient{font-weight:800}
-    .subtitle{
-      font-size:clamp(16px,1.8vw,22px);
-      opacity:.9;
-      color:var(--text);
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 100px 80px;
+      gap: 60px;
     }
 
-    /* Buttons */
-    .buttons{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .button{
-      background:var(--gradient);
-      color:var(--white);
-      padding:12px 24px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-    .button:hover{
-      transform:translateY(-2px);
-      opacity:.95;
+    .hero-text {
+      max-width: 500px;
     }
 
-/* WhitePaper button */
-.button-black{
-  background: var(--button-black-bg);
-  color: var(--button-black-text);
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.button-black:hover{
-  transform: translateY(-2px);
-}
-
-/* Mode sombre → texte violet au hover */
-body.dark .button-black:hover {
-  color: #780ffc;
-}
-
-/* Mode clair → pas de changement au hover */
-body:not(.dark) .button-black:hover {
-  color: var(--button-black-text);
-}
-
-
-    /* Theme toggle */
-    .theme-toggle{
-      position:absolute;
-      top:40px;
-      right:20px;
-      background:transparent;
-      border:none;
-      cursor:pointer;
-      width 5px;
-      height:5px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:transform .3s ease;
-    }
-    .theme-toggle:hover{
-      transform:scale(1.1);
-    }
-    .material-symbols-outlined{
-      font-variation-settings:'FILL' 0,'wght' 600,'GRAD' 0,'opsz' 40;
-      font-size:20px;
-      color:var(--text);
-      transition:color .3s ease;
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text);
     }
 
-    /* Trust + Footer */
-    .trust{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-top:20px;
-      font-size:14px;
-      opacity:.8;
-      color:var(--text);
-    }
-    .footer{
-      font-size:clamp(4px,1.2vw,6px);
-      text-align:justify;
-      opacity:.8;
-      max-width:900px;
-      width:100%;
-      line-height:1.8;
-      margin-top:60px;
-      padding:20px;
-      color:var(--text);
-    }
-    .footer-logo{
-      font-size:clamp(80px,15vw,200px);
-      font-weight:900;
-      text-align:center;
-      width:100%;
-      margin-top:80px;
-      line-height:1;
-      background:var(--gradient);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      opacity: 0.9;
+      margin-bottom: 40px;
     }
 
-    @media (max-width:480px){
-      .hero{font-size:clamp(24px,14vw,40px)}
-      .subtitle{font-size:14px}
-      .wrap{padding:20px}
-      .buttons{flex-direction:column;width:100%}
-      .footer{padding:12px}
-      .logo{width:100%;height:auto}
+    .email-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input[type="email"] {
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: 2px solid var(--violet);
+      font-family: inherit;
+      font-size: 16px;
+      width: 280px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input[type="email"]:focus {
+      box-shadow: 0 0 0 3px rgba(120, 15, 252, 0.2);
+    }
+
+    button[type="submit"] {
+      background: var(--violet);
+      color: var(--white);
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .hero-phone {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-phone img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transform: rotate(-5deg);
+    }
+
+    /* Bottom logos / Trust */
+    .bottom-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 30px 20px;
+      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+
+    .bottom-strip img {
+      height: 30px;
+      opacity: 0.85;
+    }
+
+    .bottom-strip span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .email-form {
+        justify-content: center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <!-- Bouton de thème -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-      <span id="theme-icon" class="material-symbols-outlined">light_mode</span>
-    </button>
+  <header>
+    <img src="hubricks_logo_b.png" alt="Hubricks" class="logo">
+    <nav>
+      <a href="#">Investir</a>
+      <a href="#">Trader</a>
+      <a href="#">Gains</a>
+      <a href="#">Institutions</a>
+      <a href="#">Marchés</a>
+      <a href="#">Apprendre</a>
+      <a href="#">Pourquoi Hubricks ?</a>
+    </nav>
+    <div class="nav-buttons">
+      <a href="#" class="btn btn-outline">Connexion</a>
+      <a href="#" class="btn btn-filled">Inscription</a>
+    </div>
+  </header>
 
-    <!-- Logo principal -->
-    <img id="logo" class="logo" src="hubricks_logo_v.png" alt="Hubricks logo" width="500" height="300">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Une plateforme RWA<br>sécurisée et réglementée<br>en France.</h1>
+      <p>Dépôts et retraits en euros simplifiés avec SEPA.<br>Investissez dans les actifs réels tokenisés en toute confiance.</p>
 
-    <h1 class="hero">
-      The easiest app to<br>
-      invest intelligently<br>
-      in <span class="gradient-text bold-gradient">crypto</span>
-    </h1>
-
-    <p class="subtitle">
-      Achetez, vendez et gérez vos actifs tokenisés<br>
-      avec un accompagnement sur-mesure.
-    </p>
-
-    <div class="buttons">
-      <a class="button" href="#cta">Commencer maintenant →</a>
-      <a class="button button-black" href="WP.html">WhitePaper</a>
+      <form class="email-form">
+        <input type="email" placeholder="votre@email.com" required>
+        <button type="submit">Inscription</button>
+      </form>
     </div>
 
-    <div class="trust">
-      <span class="trustpilot">★ Trustpilot</span>
-      <span>1500+ avis | 4,7/5</span>
+    <div class="hero-phone">
+      <img src="ea1c0037-71cb-4be7-a0d4-2d0c36c3dbb5.png" alt="Aperçu application Hubricks">
     </div>
-  </main>
+  </section>
 
-  <p class="footer">
-©2025 HUBRICKS tokenized SAS
-Les informations présentées sur ce site sont fournies uniquement à titre informatif et ne constituent en aucun cas une offre d’investissement dans un token, un fonds ou toute autre opportunité. Les performances présentées sont nettes de tous les frais, coûts et dépenses associés aux tokens. En cas de rachat ou de revente de tokens via Hubricks ou sur un marché secondaire, d’autres frais de traitement peuvent s’appliquer et ne sont pas inclus dans les rendements affichés. Les performances passées ne préjugent pas des performances futures. Les rendements sont calculés sur la base des revenus distribués (par exemple les loyers) et de l’appréciation de la valeur du bien sous-jacent. L’appréciation est déterminée par la différence entre le prix d’acquisition et les réévaluations annuelles du bien. Les rendements individuels peuvent varier selon la date d’investissement et de rachat de chaque investisseur.
-Ce site est exploité par HUBRICKS SAS, qui n’est ni prestataire de services d’investissement, ni conseiller en investissement financier agréé. HUBRICKS SAS ne fournit aucun conseil en investissement, recommandation ou analyse concernant des instruments financiers. Rien sur ce site ne doit être interprété comme une offre de vente, une sollicitation d’offre d’achat ou une recommandation d’un instrument financier par HUBRICKS SAS ou un tiers. Il vous appartient de déterminer si un investissement, une stratégie d’investissement, un instrument financier ou une transaction liée vous convient, en fonction de vos objectifs, de votre situation financière et de votre tolérance au risque. Nous vous recommandons de consulter des professionnels agréés (juridiques, fiscaux, financiers) pour tout conseil relatif à vos investissements. Tous les instruments financiers présentés sur ce site sont proposés par leur émetteur respectif, qui est seul responsable des informations les concernant. HUBRICKS SAS ne garantit pas la performance, le résultat ou le remboursement du capital pour toute opportunité d’investissement présentée sur ce site.
-Nous améliorons nos produits et notre publicité en utilisant, entre autres, des outils d’analyse comme Microsoft Clarity pour comprendre comment vous utilisez notre site. En utilisant notre site, vous acceptez que nous et nos prestataires puissions collecter et utiliser ces données. Notre Politique de confidentialité contient plus de détails. En accédant à ce site et à ses pages, vous acceptez d’être lié par nos Conditions générales d’utilisation et notre Politique de confidentialité. Veuillez consulter également notre avertissement général et notre déclaration d’accessibilité.
-</p>
-
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    const icon = document.getElementById('theme-icon');
-    const logo = document.getElementById('logo');
-
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const darkMode = document.body.classList.contains('dark');
-      icon.textContent = darkMode ? 'dark_mode' : 'light_mode';
-      logo.src = darkMode ? 'hubricks_logo_w.png' : 'hubricks_logo_b.png';
-    });
-  </script>
+  <div class="bottom-strip">
+    <span>🇫🇷 Conçu pour la France</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/SEPA_Logo.svg" alt="SEPA" height="28">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_Pay_logo.svg" alt="Apple Pay" height="28">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Google_Pay_Logo.svg" alt="Google Pay" height="28">
+    <span>💳 Achat instantané par carte bancaire</span>
+  </div>
 </body>
 </html>
