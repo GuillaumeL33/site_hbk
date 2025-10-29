@@ -1,1 +1,0 @@
-console.log('Hubricks site loaded successfully');
