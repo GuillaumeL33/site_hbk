@@ -335,3 +335,84 @@ footer p {
     font-size: 24px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Market Opportunity Section === */
+.market-opportunity {
+  background: linear-gradient(to bottom right, #f8fcff, #f1f6f9);
+  text-align: center;
+  padding: 80px 20px;
+  color: #1a2b49;
+}
+
+.market-opportunity .badge {
+  background-color: #dce8ff;
+  color: #2b4b8a;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.market-opportunity h2 {
+  font-size: 2.5rem;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.market-opportunity .subtitle {
+  font-size: 1.1rem;
+  color: #5f6f87;
+  max-width: 700px;
+  margin: 12px auto 50px;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 30px 24px;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+
+.stat-card i {
+  font-size: 2rem;
+  color: #396aff;
+  margin-bottom: 12px;
+}
+
+.stat-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: #607087;
+  font-size: 0.95rem;
+}
