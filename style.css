@@ -3,7 +3,8 @@
   --violet-light: #f7f4fe;
   --text: #29233b;
   --bg: #f7f4fe;
-  --white: #fff;
+  --white: #fff
+--bgbotton:#8feac4;
 }
 
 body {
@@ -94,7 +95,7 @@ nav a:hover {
 
 .hero-left .hero-intro {
   display: inline-block;
-  background: var(--violet-light);
+  background: var(--bgbotton);
   color: var(--violet);
   padding: 6px 12px;
   border-radius: 6px;
