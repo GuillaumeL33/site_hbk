@@ -3,7 +3,7 @@
   --violet-light: #e9e5fc;
   --accent: #8feac4;
   --text: #29233b;
-  --bg: #f7f4fe;
+  --bg: linear-gradient(180deg, #cfe4fc, #f6f3fc); /* <-- ici */
   --white: #fff;  
   --bghead: #fff;
 }
@@ -13,12 +13,13 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
+  background: var(--bg); /* va maintenant utiliser le dégradé */
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
+
 
 /* Header / Nav */
 header {
