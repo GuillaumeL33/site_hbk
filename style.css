@@ -95,7 +95,7 @@ nav a:hover {
 
 .hero-left .hero-intro {
   display: inline-block;
-  background: var(--bgbotton);
+  background: var(--violet-light);
   color: var(--violet);
   padding: 6px 12px;
   border-radius: 6px;
