@@ -348,7 +348,7 @@ footer p {
 
 /* === Market Opportunity Section (Obsèsle Colors) === */
 .market-opportunity {
-  background: var(--bg);
+  background: var(--white);
   text-align: center;
   padding: 100px 20px;
   color: var(--text);
