@@ -3,7 +3,7 @@
   --violet-light: #e9e5fc;
   --accent: #8feac4;
   --text: #29233b;
-  --bg: linear-gradient(180deg, #cfe4fc, #f6f3fc); /* <-- ici */
+  --bg: linear-gradient(90deg, #cfe4fc, #f6f3fc); /* <-- ici */
   --white: #fff;  
   --bghead: #fff;
 }
