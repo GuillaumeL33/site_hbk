@@ -94,7 +94,7 @@ nav a:hover {
   gap: 50px;
   padding: 60px 80px;
   flex-wrap: wrap;
-  background: linear-gradient(180deg, rgba(41,35,59,0.03), rgba(255,255,255,0.6));
+  background: var(--bg));
 }
 
 .hero-left {
