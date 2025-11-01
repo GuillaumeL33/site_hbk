@@ -1,88 +1,228 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirance - Tokenisation Immobilière</title>
-  <link rel="icon" type="image/png" href="mirance_logo_v.png">
-  <link rel="stylesheet" href="mirance_style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mirance — Tokenize and Trade Real-World Assets</title>
+  <link rel="icon" type="image/png" href="mirance_logo_v.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <img src="mirance_logo_v.png" alt="Mirance Logo" class="logo">
-      <nav>
-        <a href="#features">Fonctionnalités</a>
-        <a href="#tokenomics">Économie du Token</a>
-        <a href="#roadmap">Feuille de route</a>
-        <a href="#contact">Contact</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="mirance_logo_v.png" alt="Mirance" class="logo">
+      </a>
+      <nav class="main-nav">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+        <a href="about.html">About</a>
       </nav>
+      <div class="actions">
+        <a class="btn primary" href="waitlist.html">Join Waitlist</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Tokenisez et Investissez dans l’Immobilier du Futur</h1>
-      <p>Mirance permet de fractionner, gérer et échanger des actifs immobiliers réels sur la blockchain.</p>
-      <a href="#contact" class="btn">Rejoindre la liste d’attente</a>
-    </div>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <span class="eyebrow">Introducing RealStack</span>
+          <h1>Tokenize and Trade Real‑World Assets</h1>
+          <p class="lead">Mirance is a comprehensive platform for tokenizing, managing, and trading real‑world assets on the blockchain. Unlock liquidity, reduce costs, and access global markets.</p>
+          <div class="hero-cta">
+            <a class="btn primary large" href="waitlist.html">Join Waitlist →</a>
+            <a class="btn ghost" href="#features">Learn More</a>
+          </div>
+          <p class="trusted">Trusted by leading financial institutions</p>
+        </div>
 
-  <section id="features" class="features">
-    <div class="container">
-      <h2>Fonctionnalités principales</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Tokenisation</h3>
-          <p>Convertissez vos biens en tokens numériques représentant une part réelle d’un actif.</p>
-        </div>
-        <div class="card">
-          <h3>Gestion</h3>
-          <p>Suivez vos investissements, vos rendements et vos distributions depuis un tableau de bord unique.</p>
-        </div>
-        <div class="card">
-          <h3>Échanges</h3>
-          <p>Achetez et vendez vos parts facilement grâce à un marché secondaire fluide et transparent.</p>
+        <div class="hero-right">
+          <div class="cards-grid">
+            <div class="small-card">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect></svg>
+              <h4>Real Estate</h4>
+              <p>Commercial &amp; Residential</p>
+            </div>
+            <div class="small-card">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 20V4"></path></svg>
+              <h4>Business</h4>
+              <p>SMEs &amp; Startups</p>
+            </div>
+            <div class="small-card">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v16h16"></path></svg>
+              <h4>Securities</h4>
+              <p>Equity &amp; Debt</p>
+            </div>
+            <div class="small-card">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l7 10-7 10-7-10z"></path></svg>
+              <h4>Collectibles</h4>
+              <p>Art &amp; Luxury</p>
+            </div>
+            <div class="big-card">
+              <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12.83 2.18L2.6 6.08l8.58 3.91L22 6.08z"></path></svg>
+              <h3>Mirance Platform</h3>
+              <p>Tokenize • Manage • Trade</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="tokenomics" class="tokenomics">
-    <div class="container">
-      <h2>Économie du Token</h2>
-      <p>Notre token $MIR aligne les intérêts entre investisseurs, propriétaires et développeurs.</p>
-      <ul>
-        <li>Réduction des frais sur la plateforme</li>
-        <li>Accès aux fonctionnalités premium</li>
-        <li>Participation à la gouvernance</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Platform Features</h2>
+        <p class="section-lead">Comprehensive RWA infrastructure to tokenize, manage and trade real-world assets.</p>
 
-  <section id="roadmap" class="roadmap">
-    <div class="container">
-      <h2>Feuille de route</h2>
-      <div class="steps">
-        <div class="step"><span>1</span> Lancement de la plateforme</div>
-        <div class="step"><span>2</span> Intégration du token MIR</div>
-        <div class="step"><span>3</span> Ouverture du marché secondaire</div>
-        <div class="step"><span>4</span> Expansion internationale</div>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feature-icon">①</div>
+            <h3>Asset Tokenization</h3>
+            <p>Convert real assets into tokens with legal compliance and verification.</p>
+            <ul>
+              <li>Legal framework integration</li>
+              <li>Automated compliance</li>
+              <li>Multi‑chain support</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">②</div>
+            <h3>Asset Management</h3>
+            <p>Tools to manage lifecycle, distributions and analytics.</p>
+            <ul>
+              <li>Dividend distribution</li>
+              <li>Governance tools</li>
+              <li>Performance analytics</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">③</div>
+            <h3>Trading Platform</h3>
+            <p>Liquid market for buying and selling tokenized assets.</p>
+            <ul>
+              <li>Order book &amp; AMM</li>
+              <li>Fractional ownership</li>
+              <li>Secondary market</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">④</div>
+            <h3>Compliance &amp; Security</h3>
+            <p>Regulatory compliance and multi‑sig security.</p>
+            <ul>
+              <li>KYC/AML integration</li>
+              <li>Regulatory reporting</li>
+              <li>Multi‑sig custody</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contactez-nous</h2>
-      <p>Intéressé par Mirance ? Rejoignez notre communauté et soyez parmi les premiers à investir.</p>
-      <a href="mailto:contact@mirance.io" class="btn">Nous écrire</a>
-    </div>
-  </section>
+    <!-- How it works -->
+    <section id="how-it-works" class="section alt">
+      <div class="container">
+        <h2 class="section-title">How Mirance Works</h2>
+        <div class="how-grid">
+          <div class="how-step">
+            <div class="step-num">1</div>
+            <h4>Asset Onboarding</h4>
+            <p>Submit assets for tokenization with verification.</p>
+          </div>
+          <div class="how-step">
+            <div class="step-num">2</div>
+            <h4>Legal Structure & Tokenization</h4>
+            <p>We create legal wrappers and mint compliant tokens.</p>
+          </div>
+          <div class="how-step">
+            <div class="step-num">3</div>
+            <h4>Marketplace Listing</h4>
+            <p>List asset tokens on the Mirance marketplace.</p>
+          </div>
+          <div class="how-step">
+            <div class="step-num">4</div>
+            <h4>Management & Distributions</h4>
+            <p>Automate distributions and reporting to investors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="section">
+      <div class="container">
+        <h2 class="section-title">Tokenomics</h2>
+        <p class="section-lead">Our token $MIR aligns incentives across the platform.</p>
+        <div class="two-col">
+          <div>
+            <h3>Token Utility</h3>
+            <ul>
+              <li>Reduced platform fees</li>
+              <li>Access to premium features</li>
+              <li>Governance participation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Distribution</h3>
+            <p>Token distribution plan and governance allocations (example placeholders).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Roadmap</h2>
+        <div class="roadmap-grid">
+          <div class="road-item"><strong>Q1</strong><p>Lancement de la plateforme</p></div>
+          <div class="road-item"><strong>Q2</strong><p>Intégration du token MIR</p></div>
+          <div class="road-item"><strong>Q3</strong><p>Ouverture du marché secondaire</p></div>
+          <div class="road-item"><strong>Q4</strong><p>Expansion internationale</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Qu'est-ce que la tokenisation d'actifs réels ?</summary>
+            <p>La tokenisation consiste à représenter légalement une part d'actif réel par un token numérique.</p>
+          </details>
+          <details>
+            <summary>Comment investir ?</summary>
+            <p>Inscrivez-vous sur la liste d'attente et suivez les offres sur la marketplace.</p>
+          </details>
+          <details>
+            <summary>Quelles garanties légales ?</summary>
+            <p>Les tokens sont adossés à des structures juridiques et contrats intelligents conformes.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <p>© 2025 Mirance. Tous droits réservés.</p>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="whitepaper.html">Whitepaper</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
 </body>
