@@ -1,9 +1,9 @@
 :root {
-  --violet: #0066f9;
+  --violet: linear-gradient(45deg, #00db37, #00f6a5;
   --violet-light: #d7e6ff;
   --accent: #8feac4;
-  --text: #1a2830;
-  --bg: linear-gradient(45deg, #fff6e5, #f9e3f6, #dbeffe, #daf8e8);
+  --text: #fff;
+  --bg: #0000;
   --white: #fff;
   --bghead: #fff;
 }
@@ -28,6 +28,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 60px;
+  background: var(--bghead);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
