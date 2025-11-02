@@ -596,7 +596,7 @@ footer p {
 /* Carte Mirance Platform uniquement */
 .feature-card.full-width {
   grid-column: 1 / -1;
-  background-image: linear-gradient(45deg, #00f687, #00e0f6); /* gradient direct */
+  background-image: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* gradient direct */
   color: #fff;
   display: flex;
   flex-direction: column;
