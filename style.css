@@ -1,8 +1,8 @@
 :root {
-  --violet: #29233b;
+  --violet: #0066f9;
   --violet-light: #e9e5fc;
   --accent: #8feac4;
-  --text: #29233b;
+  --text: ##1a2830;
   --bg: linear-gradient(90deg, #cfe4fc, #f6f3fc); /* <-- ici */
   --white: #fff;  
   --bghead: #fff;
