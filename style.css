@@ -4,7 +4,7 @@
   --accent: var(--violet); /* accent dégradé partout */
   --text: #fff;       /* texte principal blanc */
   --bg: #000;         /* fond principal noir */
-  --card-bg: #e9eef2;    /* fond des cartes et sections secondaires */
+  --card-bg: #1111;    /* fond des cartes et sections secondaires */
   --card-bg-Gradient: linear-gradient(45deg, #00f687, #00e0f6); /* fond des cartes spécifiques */
   --bghead: #111;     /* header légèrement plus clair que le fond */
 }
