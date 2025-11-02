@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mirance — Invest Smartly in RWA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700&f[]=inter@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -224,20 +224,60 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Use</a>
-      <a href="#">Support</a>
+<!-- Footer -->
+<footer style="background-color:#0A0A0A; color:#fff; padding:50px 20px; font-family:Arial, sans-serif;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between;">
+
+    <!-- External Links -->
+    <div>
+      <h4 style="margin-bottom:15px;">External Links</h4>
+      <ul style="list-style:none; padding:0; line-height:2;">
+        <li><a href="#" style="color:#fff; text-decoration:none;">Docs</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Issuer</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Proof of Reserves</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Oracles</a></li>
+      </ul>
     </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+
+    <!-- About Backed -->
+    <div>
+      <h4 style="margin-bottom:15px;">About Backed</h4>
+      <ul style="list-style:none; padding:0; line-height:2;">
+        <li><a href="#" style="color:#fff; text-decoration:none;">Ecosystem</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Company</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Careers</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">News</a></li>
+      </ul>
     </div>
-    <p>© 2025 Mirance. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+
+    <!-- Newsletter -->
+    <div style="flex:1; min-width:250px;">
+      <h4 style="margin-bottom:15px;">Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required 
+               style="width:100%; padding:10px; margin-bottom:10px; border:none; border-radius:5px;">
+        <div style="margin-bottom:10px;">
+          <input type="checkbox" id="newsletter" required>
+          <label for="newsletter" style="font-size:12px; color:#ccc;">
+            Please tick this box to receive news and updates about our services. Your data will be processed per our <a href="#" style="color:#fff; text-decoration:underline;">privacy policy</a>. You can unsubscribe at any time.
+          </label>
+        </div>
+        <button type="submit" style="padding:10px 20px; background:#00f; color:#fff; border:none; border-radius:5px; cursor:pointer;">
+          Subscribe
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <hr style="border-color:#333; margin:30px 0;">
+
+  <!-- Bottom Footer -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; font-size:12px; color:#888;">
+    <p>© 2025 Backed Finance. All rights reserved.</p>
+    <div>
+      <a href="#" style="color:#888; margin-right:15px; text-decoration:none;">Privacy Notice</a>
+      <a href="#" style="color:#888; text-decoration:none;">Terms of Service</a>
+    </div>
+  </div>
+</footer>
