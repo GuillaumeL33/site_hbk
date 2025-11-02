@@ -1,7 +1,7 @@
 :root {
-  --violet: linear-gradient(45deg, #00db37, #00f6a5);
+  --violet: linear-gradient(45deg, #00f687, #00e0f6); /* nouveau dégradé */
   --violet-light: #1a1a1a; /* pour badges et surlignages */
-  --accent: #8feac4;
+  --accent: var(--violet); /* accent dégradé partout */
   --text: #fff;       /* texte principal blanc */
   --bg: #000;         /* fond principal noir */
   --card-bg: #111;    /* fond des cartes et sections secondaires */
@@ -92,12 +92,12 @@ nav a:hover {
   background: var(--accent);
   color: #fff;
   border: none;
-  box-shadow: 0 4px 10px rgba(143, 234, 196, 0.3);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 .btn-discover:hover {
-  background: linear-gradient(90deg, #00a37f, #00db37);
-  box-shadow: 0 6px 15px rgba(143, 234, 196, 0.4);
+  background: var(--violet);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Learn More */
@@ -108,8 +108,8 @@ nav a:hover {
 }
 
 .btn-learn:hover {
-  color: #00db37;
-  border-color: #00db37;
+  color: var(--violet);
+  border-color: var(--violet);
 }
 
 /* Hero Section */
@@ -189,7 +189,7 @@ nav a:hover {
 
 .feature-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(143, 234, 196, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
 
 .feature-card i {
@@ -404,7 +404,7 @@ footer p {
 
 .stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(143, 234, 196, 0.15);
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.15);
 }
 
 .stat-card i {
@@ -474,7 +474,7 @@ footer p {
   }
 }
 
-/* ===== Platform Features Section ===== */
+/* Platform Features Section */
 .platform-features {
   background: var(--bg);
   padding: 100px 20px;
@@ -513,7 +513,6 @@ footer p {
   line-height: 1.6;
 }
 
-/* Grid 3x2 Layout */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -535,7 +534,7 @@ footer p {
 
 .feature-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(143, 234, 196, 0.2);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
 .feature-block h3 {
@@ -547,4 +546,22 @@ footer p {
   gap: 10px;
 }
 
-.
+.feature-block p {
+  color: #fff;
+  opacity: 0.85;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.feature-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-block li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
