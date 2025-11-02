@@ -1,11 +1,11 @@
 :root {
-  --violet: linear-gradient(45deg, #00f687, #00e0f6); /* nouveau dégradé */
+  --violet: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* nouveau dégradé */
   --violet-light: #1a1a1a; /* pour badges et surlignages */
   --accent: var(--violet); /* accent dégradé partout */
   --text: #fff;       /* texte principal blanc */
   --bg: #000;         /* fond principal noir */
   --card-bg: #1111;    /* fond des cartes et sections secondaires */
-  --card-bg-Gradient: linear-gradient(45deg, #00f687, #00e0f6); /* fond des cartes spécifiques */
+  --card-bg-Gradient: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* fond des cartes spécifiques */
   --bghead: #111;     /* header légèrement plus clair que le fond */
 }
 
