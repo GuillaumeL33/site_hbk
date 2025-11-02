@@ -111,7 +111,6 @@ nav a:hover {
 }
 
 .btn-learn:hover {
-  background: var(--violet-light);
   color: #004ccc;
   border-color: #004ccc;
 }
