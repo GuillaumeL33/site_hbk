@@ -177,21 +177,25 @@ nav a:hover {
 }
 
 .feature-card {
-  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 25px 20px;
+  background: var(--card-bg);
   border-radius: 12px;
-  background-color: #111;          /* fond de la carte */
-  background-image: none;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s, border-image 0.3s;
+  color: #fff;
+  border: 2px solid transparent; /* bordure par défaut */
 }
 
 .feature-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
-  background-image: var(--card-bg-Gradient);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  /* on masque l’intérieur pour que seul le bord soit le gradient */
-  background-repeat: no-repeat;
+  border-image: var(--card-bg-Gradient) 1; /* variable utilisée ici */
 }
 
 
