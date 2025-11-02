@@ -177,6 +177,7 @@ nav a:hover {
 }
 
 .feature-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,16 +188,36 @@ nav a:hover {
   background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s, border-image 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   color: #fff;
-  border: 2px solid transparent; /* bordure par défaut */
+  overflow: hidden; /* nécessaire pour le pseudo-élément */
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* épaisseur de la bordure */
+  border-radius: 12px;
+  background: var(--card-bg-Gradient); /* variable utilisée */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
-  border-image: var(--card-bg-Gradient) 1; /* variable utilisée ici */
 }
+
+.feature-card:hover::before {
+  opacity: 1; /* fait apparaître la bordure gradient */
+}
+
 
 
 .feature-card i {
