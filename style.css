@@ -4,7 +4,8 @@
   --accent: var(--violet); /* accent dégradé partout */
   --text: #fff;       /* texte principal blanc */
   --bg: #000;         /* fond principal noir */
-  --card-bg: #111;    /* fond des cartes et sections secondaires */
+  --card-bg: #e9eef2;    /* fond des cartes et sections secondaires */
+  --card-bg-Gradient: linear-gradient(45deg, #00f687, #00e0f6); /* fond des cartes spécifiques */
   --bghead: #111;     /* header légèrement plus clair que le fond */
 }
 
@@ -197,8 +198,30 @@ nav a:hover {
   color: var(--accent);
 }
 
+/* Carte Mirance Platform uniquement */
 .feature-card.full-width {
-  grid-column: 1 / -1;
+  background: var(--card-bg-Gradient);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
+}
+
+.feature-card.full-width:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+.feature-card.full-width i {
+  font-size: 28px;
+  color: var(--accent);
 }
 
 /* Sections générales */
