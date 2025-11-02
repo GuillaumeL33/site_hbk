@@ -1,14 +1,15 @@
 :root {
-  --violet: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* nouveau dégradé */
+  --violet: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* dégradé principal */
   --violet-light: #1a1a1a; /* pour badges et surlignages */
   --accent: var(--violet); /* accent dégradé partout */
   --text: #fff;       /* texte principal blanc */
   --bg: #000;         /* fond principal noir */
   --card-bg: #1111;    /* fond des cartes et sections secondaires */
-  --card-bg-Gradient: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* fond des cartes spécifiques */
+  --card-bg-Gradient: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* fond gradient cartes */
   --bghead: #111;     /* header légèrement plus clair que le fond */
 }
 
+/* Global */
 * {
   box-sizing: border-box;
 }
@@ -21,7 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-
 }
 
 /* Header / Nav */
@@ -37,9 +37,7 @@ header {
   z-index: 50;
 }
 
-.logo {
-  height: 48px;
-}
+.logo { height: 48px; }
 
 nav {
   display: flex;
@@ -55,16 +53,9 @@ nav a {
   transition: color 0.2s;
 }
 
+nav a:hover { color: var(--accent); }
 
-nav a:hover {
-  color: var(--accent);
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
+.nav-buttons { display: flex; gap: 12px; align-items: center; }
 
 .btn {
   padding: 10px 20px;
@@ -75,46 +66,27 @@ nav a:hover {
   transition: transform 0.2s, opacity 0.2s;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
-}
+.btn:hover { transform: translateY(-2px); opacity: 0.95; }
+.btn-outline { color: var(--accent); border: 1px solid var(--accent); }
+.btn-filled { background: var(--accent); color: var(--text); border: none; }
 
-.btn-outline {
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
-
-.btn-filled {
-  background: var(--accent);
-  color: var(--text);
-  border: none;
-}
-
-/* Discover Mirance */
 .btn-discover {
   background: var(--accent);
   color: #fff;
   border: none;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
-
 .btn-discover:hover {
   background: var(--violet);
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Learn More */
 .btn-learn {
   background: transparent;
   color: var(--accent);
   border: 2px solid var(--accent);
 }
-
-.btn-learn:hover {
-  color: var(--violet);
-  border-color: var(--violet);
-}
+.btn-learn:hover { color: var(--violet); border-color: var(--violet); }
 
 /* Hero Section */
 .hero {
@@ -126,10 +98,7 @@ nav a:hover {
   background: var(--bg);
 }
 
-.hero-left {
-  flex: 1;
-  max-width: 620px;
-}
+.hero-left { flex: 1; max-width: 620px; }
 
 .hero-left .hero-intro {
   display: inline-block;
@@ -156,26 +125,15 @@ nav a:hover {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-}
+.hero-buttons { display: flex; gap: 15px; margin-bottom: 30px; }
 
-.hero-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+.hero-right { flex: 1; display: flex; flex-direction: column; gap: 15px; }
 
-/* Features Grid */
-.features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
+/* ------------------------------ */
+/* Cards avec bordure gradient    */
+/* ------------------------------ */
 
+/* Feature Cards */
 .feature-card {
   position: relative;
   display: flex;
@@ -188,21 +146,19 @@ nav a:hover {
   background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
   color: #fff;
-  overflow: hidden; /* nécessaire pour le pseudo-élément */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  padding: 2px; /* épaisseur de la bordure */
+  padding: 2px;
   border-radius: 12px;
-  background: var(--card-bg-Gradient); /* variable utilisée */
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  background: var(--card-bg-Gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
@@ -213,19 +169,81 @@ nav a:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
+.feature-card:hover::before { opacity: 1; }
 
-.feature-card:hover::before {
-  opacity: 1; /* fait apparaître la bordure gradient */
+.feature-card i { font-size: 28px; color: var(--accent); }
+
+/* Timeline Cards */
+.timeline-card {
+  position: relative;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  min-width: 200px;
+  color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-
-.feature-card i {
-  font-size: 28px;
-  color: var(--accent);
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 12px;
+  background: var(--card-bg-Gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Carte Mirance Platform uniquement */
+.timeline-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+.timeline-card:hover::before { opacity: 1; }
+
+.timeline-card strong { display: block; font-size: 18px; margin-bottom: 10px; color: var(--accent); }
+
+/* FAQ Items */
+.faq-item {
+  position: relative;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 12px;
+  background: var(--card-bg-Gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+.faq-item:hover::before { opacity: 1; }
+
+.faq-item strong { display: block; margin-bottom: 8px; color: var(--accent); }
+
+/* Full-width Feature Card */
 .feature-card.full-width {
   background: var(--card-bg-Gradient);
   color: #fff;
@@ -246,12 +264,12 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
 
-.feature-card.full-width i {
-  font-size: 28px;
-  color: var(--accent);
-}
+.feature-card.full-width i { font-size: 28px; color: #fff; }
 
-/* Sections générales */
+/* ------------------------------ */
+/* Sections, Footer, Responsive   */
+/* ------------------------------ */
+
 section {
   display: flex;
   justify-content: space-between;
@@ -263,27 +281,10 @@ section {
   color: var(--text);
 }
 
-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: var(--text);
-}
+section h2 { font-size: 28px; margin-bottom: 20px; color: var(--text); }
+section p { font-size: 16px; opacity: 0.85; margin-bottom: 20px; }
 
-section p {
-  font-size: 16px;
-  opacity: 0.85;
-  margin-bottom: 20px;
-}
-
-.section-left {
-  flex: 1;
-  min-width: 300px;
-}
-
-.section-right {
-  flex: 1;
-  min-width: 300px;
-}
+.section-left, .section-right { flex: 1; min-width: 300px; }
 
 .section-right img {
   width: 100%;
@@ -292,59 +293,6 @@ section p {
   filter: brightness(0.8);
 }
 
-/* Timeline Section */
-.timeline {
-  flex-direction: column;
-  text-align: center;
-  padding: 60px 60px;
-}
-
-.timeline-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.timeline-card {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  min-width: 200px;
-  color: #fff;
-}
-
-.timeline-card strong {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--accent);
-}
-
-/* FAQ Section */
-.faq {
-  flex-direction: column;
-  padding: 60px 60px;
-}
-
-.faq-item {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  color: #fff;
-}
-
-.faq-item strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--accent);
-}
-
-/* Footer */
 footer {
   background: var(--card-bg);
   color: #fff;
@@ -355,296 +303,13 @@ footer {
   line-height: 1.6;
 }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-
-.footer-links a {
-  color: var(--accent);
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  font-size: 22px;
-  margin-bottom: 25px;
-}
-
-.social-icons a {
-  color: var(--accent);
-  transition: color 0.2s;
-}
-
-.social-icons a:hover {
-  color: var(--violet);
-}
-
-footer p {
-  max-width: 900px;
-  margin: 10px auto;
-  color: #fff;
-  opacity: 0.9;
-}
-
-/* Market Opportunity */
-.market-opportunity {
-  background: var(--card-bg);
-  text-align: center;
-  padding: 100px 20px;
-  color: #fff;
-}
-
-.market-opportunity .container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.market-opportunity .badge {
-  background-color: var(--violet-light);
-  color: var(--accent);
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  display: inline-block;
-}
-
-.market-opportunity h2 {
-  font-size: 2.4rem;
-  margin-top: 16px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.market-opportunity .subtitle {
-  font-size: 1.1rem;
-  color: #fff;
-  opacity: 0.75;
-  max-width: 700px;
-  margin: 16px auto 60px;
-  line-height: 1.6;
-}
-
-.stats-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
-}
-
-.stat-card {
-  background: #222;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
-  padding: 40px 30px;
-  width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #fff;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.15);
-}
-
-.stat-card i {
-  font-size: 2rem;
-  color: var(--accent);
-  margin-bottom: 15px;
-}
-
-.stat-card h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #fff;
-}
-
-.stat-card p {
-  color: #fff;
-  opacity: 0.7;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .hero,
-  section {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .hero-left,
-  .section-left,
-  .section-right {
-    max-width: 100%;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-card.full-width {
-    grid-column: 1 / -1;
-  }
-
-  .timeline-cards {
-    flex-direction: column;
-  }
-
-  nav {
-    display: none;
-  }
-
-  header {
-    padding: 12px 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-left h1 {
-    font-size: 28px;
-    line-height: 1.35;
-  }
-
-  section h2 {
-    font-size: 24px;
-  }
-}
-
-/* Platform Features Section */
-.platform-features {
-  background: var(--bg);
-  padding: 100px 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.platform-features .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.platform-features .badge {
-  background: var(--violet-light);
-  color: var(--accent);
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 6px 12px;
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
-.platform-features h2 {
-  font-size: 2.2rem;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #fff;
-}
-
-.platform-features .subtitle {
-  font-size: 1.05rem;
-  color: #fff;
-  opacity: 0.8;
-  max-width: 750px;
-  margin: 0 auto 60px;
-  line-height: 1.6;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  justify-items: center;
-}
-
-.feature-block {
-  background: #222;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
-  padding: 30px 25px;
-  text-align: left;
-  width: 100%;
-  max-width: 360px;
-  transition: all 0.3s ease;
-  color: #fff;
-}
-
-.feature-block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
-}
-
-.feature-block h3 {
-  font-size: 1.25rem;
-  color: var(--accent);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.feature-block p {
-  color: #fff;
-  opacity: 0.85;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
-.feature-block ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.feature-block li {
-  padding-left: 20px;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-
-/* Carte Mirance Platform uniquement */
-.feature-card.full-width {
-  grid-column: 1 / -1;
-  background-image: linear-gradient(45deg, #6c1cf7, #f9299f, #f3522a); /* gradient direct */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  padding: 25px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  transition: transform 0.2s;
-}
-
-.feature-card.full-width:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
-}
-
-.feature-card.full-width i {
-  font-size: 28px;
-  color: #fff; /* bien visible sur le gradient */
-
-}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Satoshi', sans-serif;
   font-weight: 500;
-  color: #0f0f0f;
+  color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .hero, section { flex-direction: column; text-align: center; padding: 60px 20px; }
+  .hero-left,
