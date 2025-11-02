@@ -470,7 +470,7 @@ footer p {
 
 /* ===== Platform Features Section ===== */
 .platform-features {
-  background: var(--white);
+  background: var(--bg);
   padding: 100px 20px;
   text-align: center;
   color: var(--text);
