@@ -26,9 +26,9 @@
     "e2e:open": "synpress open -cf synpress.config.ts"
   },
   "dependencies": {
-    "@centrifuge/centrifuge-js": "workspace:*",
-    "@centrifuge/centrifuge-react": "workspace:*",
-    "@centrifuge/fabric": "workspace:*",
+    "@centrifuge/centrifuge-js": "file:../fabric",
+    "@centrifuge/centrifuge-react": "file:../fabric",
+    "@centrifuge/fabric": "file:../fabric",
     "@centrifuge/sdk": "0.0.0-alpha.12",
     "@makerdao/multicall": "^0.12.0",
     "@polkadot/react-identicon": "~3.1.4",
