@@ -1,0 +1,6 @@
+# Each line is a file pattern followed by one or more owners.
+# * @global-owner
+# Workflows are less sensitive than actions
+
+.github/workflows/ @gpmayorga @sophialittlejohn @kattylucy @hieronx
+.github/actions/ @gpmayorga @hieronx
