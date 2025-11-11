@@ -18,8 +18,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@centrifuge/centrifuge-js": "^3.1.2",
-    "@centrifuge/fabric": "^0.75.0",
+    "@centrifuge/centrifuge-js": "workspace:*",
+    "@centrifuge/fabric": "workspace:*",
     "@mdx-js/preact": "^2.1.1",
     "@mdx-js/react": "^1.6.22",
     "@types/eslint": "^7",
@@ -39,8 +39,8 @@
     "typescript": "~5.3.3"
   },
   "peerDependencies": {
-    "@centrifuge/centrifuge-js": "^3.1.2",
-    "@centrifuge/fabric": "^0.75.0",
+    "@centrifuge/centrifuge-js": "*",
+    "@centrifuge/fabric": "*",
     "react": ">18",
     "react-dom": ">18"
   },
