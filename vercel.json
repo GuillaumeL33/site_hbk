@@ -1,4 +1,6 @@
 ﻿{
-  "buildCommand": "yarn build",
-  "installCommand": "yarn install"
+  "installCommand": "yarn install",
+  "buildCommand": "cd centrifuge-app && yarn build",
+  "framework": "nextjs",
+  "outputDirectory": "centrifuge-app/.next"
 }
